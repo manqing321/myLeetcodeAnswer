@@ -1,0 +1,30 @@
+## Delete Node in a Linked List
+I solove this problem with csharp
+here is the code
+
+`
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public void DeleteNode(ListNode node) {
+        node.val=node.next.val;
+        node.next=node.next.next;
+    }
+}
+`
+
+
+
+I also want to use C , maybe next time
+`
+void deleteNode(struct ListNode* node) {
+    *node=*(node->next);
+}
+`
+ok i dont understand what mean of '->';
