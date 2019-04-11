@@ -1,0 +1,25 @@
+maybe this is the first question of leetcode
+
+
+`
+public int[] TwoSum(int[] nums, int target) {
+        int[] arr=new int[2];
+        for(int i=0;i<nums.Count();i++)
+        {
+            for(int j=nums.Count()-1;j>i;j--)
+            {
+                if((nums[i]+nums[j])==target)
+                {
+                    arr[0]=i;
+                    arr[1]=j;
+                    return arr;
+                }
+            }
+        }
+        return arr;
+    }
+`
+
+O(N^2) maybe this is a failure methold
+I cannot understand why they could dell with it in O(1) 
+It's like black magic.
