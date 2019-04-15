@@ -24,7 +24,8 @@ public class Solution {
 I also want to use C , maybe next time
 `
 void deleteNode(struct ListNode* node) {
-    *node=*(node->next);
+    *node->*(node->next);
 }
 `
 ok i dont understand what mean of '->';
+Maybe it's means point to the next or attributes of structures;
