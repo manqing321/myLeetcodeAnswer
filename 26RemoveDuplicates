@@ -32,3 +32,29 @@ int removeDuplicates(int* nums, int numsSize) {
     return result;
 }
 `
+
+2019/4/17
+maybe it's beacause i have used too much memory to do that.
+Here is today's answer(it's right this time):
+`
+int removeDuplicates(int* nums, int numsSize) {
+    if(nums==NULL || numsSize==0)
+	return 0;
+	
+	int k=0;
+	int t=1;
+	//不一样的数k就加一位
+	//t是循环下标
+	for(; t<numsSize; t++)
+	{
+		//printf("nums[%d]=%d nums[%d]=%d\n",t,nums[t],k,nums[k]);
+		if(nums[t]!=nums[k])
+		{
+			k++;
+			nums[k]=nums[t];
+		}
+	}
+	//printf("%d\n",k);
+	return k+1;
+}
+`
