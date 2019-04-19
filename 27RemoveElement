@@ -1,0 +1,46 @@
+here is it
+the 27th question 
+here is my answer, I deal with it by C
+`
+int removeElement(int* nums, int numsSize, int val) {
+	int i=0;
+	int j=numsSize-1;
+	int time=0;
+	do {
+		time++;
+		while(nums[i]!=val && i<=j) {
+			i++;
+		}
+		while(nums[j]==val && i<=j) {
+			j--;
+		}
+		if(nums[i]==val && i<j){		
+		printf("change the nums[%d](%d) and nums[%d](%d)\n",i,nums[i],j,nums[j]);
+		int temp=nums[i];
+		nums[i]=nums[j];
+		nums[j]=temp;
+		i++;
+		j--;
+	}
+	} while(i<j);
+	printf("the time of change is %d\n",time);
+	return i+1;
+}
+`
+In fact it's not the right answer .
+And i know that it's because of too many memory was used.
+After two days , I make this answer.
+`
+int removeElement(int* nums, int numsSize, int val) {
+	int i=0;
+	int j=0;
+	for(i=0; i<numsSize; i++) {
+		if(nums[i]!=val){
+			nums[j]=nums[i];
+			printf(" nums[%d] %d and nums[%d] %d change\n",j,nums[j],i,nums[i]);
+			j++;
+		}
+	}
+	return j;
+}
+`
