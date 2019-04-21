@@ -1,0 +1,65 @@
+OK here is my code for 13 RomanToInt
+This is my first time better than 99 percent people
+But it's still a lots of 'case' , so that it's difficult to read and understand for other persons. 
+
+`
+int romanToInt(char* s) {
+    //遍历字符串
+    //IXC做后一步判断
+    int result=0;
+    while(*s)
+    {
+        switch(*s){
+            case 'M':
+                result+=1000;
+                break;
+            case 'D':
+                result+=500;
+                break;
+            case 'C':
+                if(*(s+1)=='D'){
+                    result+=400;
+                    s++;
+                }
+                else if(*(s+1)=='M'){
+                    result+=900;
+                    s++;
+                }else
+                    result+=100;
+                break;
+            case 'L':
+                result+=50;
+                break;
+            case 'X':
+                if(*(s+1)=='L'){
+                    result+=40;
+                    s++;
+                }
+                else if(*(s+1)=='C'){
+                    result+=90;
+                    s++;
+                }else
+                    result+=10;
+                break;
+            case 'V':
+                result+=5;
+                break;
+            case 'I':
+                if(*(s+1)=='V'){
+                    result+=4;
+                    s++;
+                }
+                else if(*(s+1)=='X'){
+                    result+=9;
+                    s++;
+                }else
+                    result+=1;
+                break;
+        }
+        s++;
+    }
+    return result;
+}
+`
+
+Thanks for taking your time to read this.
