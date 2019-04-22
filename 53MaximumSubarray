@@ -1,0 +1,27 @@
+## oh my god
+I have to say it's difficult for me.
+I think it when i am eating or warking and it costs me a lot of time. 
+And I still cannot deal with it.
+At last,i ask somebody for answer.
+here is it 
+`
+int maxSubArray(int* nums, int numsSize) {
+    int i=0;
+	int sum=0;
+	int max=0;
+	int allsum=0;
+	int maxnum=nums[0];
+	for(i=0; i<numsSize; i++) {
+		sum+=nums[i];
+		maxnum=maxnum>nums[i]?maxnum:nums[i];
+		if(sum>max)
+			max=sum;
+		else if(sum<0)
+			sum=0;
+	}
+	max=maxnum>0?max:maxnum;
+	return max;
+}
+`
+
+ok it's time to google the way how to use markdown in github
