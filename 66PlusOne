@@ -1,0 +1,41 @@
+OK I have to study how to use the git . and put the code to this place.
+This question is eazy,and here is my solution
+
+`
+
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
+    //边界
+    if(digits==NULL)
+        return NULL;
+    //特殊处理
+    if(0==digits[0])
+    {        
+        digits[0]=1;
+        *returnSize=digitsSize;        
+        return digits;
+    }
+    
+    int i=digitsSize-1;
+    *returnSize=digitsSize;
+    for(;i>=0;i--)
+    {
+        if(digits[i]!=9)
+        {
+            digits[i]++;
+            return digits;
+        }else
+        digits[i]=0;
+    }
+    *returnSize=digitsSize+1;
+    int* result=(int*)malloc((*returnSize)*sizeof(int));
+    result[0]=1;
+    
+    for(i=0;i<digitsSize;i++)
+    {
+        result[i+1]=digits[i];
+    }
+    
+    return result;
+    
+}
+`
