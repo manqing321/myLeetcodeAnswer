@@ -46,8 +46,21 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-
-
+struct ListNode* middleNode(struct ListNode* head)
+{
+	struct ListNode* quick=head;
+	struct ListNode* slow=head;
+	while(quick && slow)
+	{
+	    quick=quick->next;
+		if(quick)
+		 quick=quick->next;
+		else break;
+	    slow=slow->next;		
+	}
+	return slow; 
+} 
+/* 
 struct ListNode* middleNode(struct ListNode* head) {
 	//printf("2\n");
 	struct ListNode* arr[100];
@@ -70,4 +83,5 @@ struct ListNode* middleNode(struct ListNode* head) {
 	//free(p);
 	return q;
 }
+*/ 
 
