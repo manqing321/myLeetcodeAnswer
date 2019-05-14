@@ -62,10 +62,21 @@ int main(int argc, char *argv[]) {
 	printf("      %d    %d   \n",b.val,c.val);
 	printf("     / \\  / \\  \n");
 	printf("    %d  %d  %d  %d \n",d.val,e.val,f.val,g.val);
-	printf("here it is.");
+	printf("here it is.\n");
 	//void showBinaryTree(a);
+	printf("前序遍历:  "); 
+	showBeforeTree(&a); 
+	printf("\n"); 
+	printf("中序遍历:  "); 
+	showMinTree(&a); 
+	printf("\n"); 
+	printf("后序遍历:  "); 
+	showAfterTree(&a); 
+	/*
 	int result=(isSymmetric(&a));
 	printf("the result is %d",result);
+	*/
+	
 	return 0;
 }
 int isSymmetric(struct TreeNode* root) {
@@ -88,14 +99,30 @@ int isMirror(struct TreeNode* left,struct TreeNode* right) {
 
 
 
-void showBinaryTree(struct TreeNode* top) {
+void showMinTree(struct TreeNode* top) {
 	//遍历方式 中序遍历
-
-
+	if(NULL!=top){
+	showMinTree(top->leftChild);
+    printf(" %d",top->val); 
+    showMinTree(top->rightChild);
+	}
 }
 
-void showtree(struct TreeNode* tree) {
-	//遍历方式 中序遍历
+void showBeforeTree(struct TreeNode* tree) {
+	//遍历方式 前序遍历
+	if(NULL!=tree){
+	printf(" %d",tree->val); 
+	showBeforeTree(tree->leftChild);
+    showBeforeTree(tree->rightChild);
+	}
+}
+
+void showAfterTree(struct TreeNode* tree){
+	if(NULL!=tree){
+	showAfterTree(tree->leftChild);
+    showAfterTree(tree->rightChild);    
+	printf(" %d",tree->val); 
+	}
 }
 
 
